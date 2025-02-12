@@ -52,8 +52,12 @@ def create_meeting_task(meeting_id: int, task: schemas.TaskCreate, db: Session =
     meeting = crud.get_meeting_by_id(db, meeting_id)
     if meeting is None:
         raise HTTPException(status_code=404, detail="会議が見つかりません")
-    task.meeting_id = meeting_id  # meeting_idを設定
-    return crud.create_task(db=db, task=task)
+    
+    # タスク作成用のデータを準備
+    task_data = task.model_dump()
+    task_data["meeting_id"] = meeting_id
+    
+    return crud.create_task(db=db, task_data=task_data)
 
 # 会議のタスク一覧取得
 @app.get("/meetings/{meeting_id}/tasks/", response_model=list[schemas.Task])

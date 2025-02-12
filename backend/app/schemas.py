@@ -9,7 +9,7 @@ class TaskBase(BaseModel):
     status: str = "pending"
 
 class TaskCreate(TaskBase):
-    meeting_id: int
+    pass    # TaskBaseを継承するだけで、meeting_idは不要
 
 class Task(TaskBase):
     id: int

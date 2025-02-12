@@ -74,14 +74,8 @@ def delete_meeting(db: Session, meeting_id: int):
 
 
 # タスクを新規作成する関数
-def create_task(db: Session, task: schemas.TaskCreate):
-    db_task = models.Task(
-        meeting_id=task.meeting_id,
-        content=task.content,
-        assignee=task.assignee,
-        due_date=task.due_date,
-        status=task.status
-    )
+def create_task(db: Session, task_data: dict):
+    db_task = models.Task(**task_data)
     db.add(db_task)
     db.commit()
     db.refresh(db_task)
