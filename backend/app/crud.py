@@ -71,3 +71,40 @@ def delete_meeting(db: Session, meeting_id: int):
     db.commit()
     
     return db_meeting
+
+
+# タスクを新規作成する関数
+def create_task(db: Session, task: schemas.TaskCreate):
+    db_task = models.Task(
+        meeting_id=task.meeting_id,
+        content=task.content,
+        assignee=task.assignee,
+        due_date=task.due_date,
+        status=task.status
+    )
+    db.add(db_task)
+    db.commit()
+    db.refresh(db_task)
+    return db_task
+
+# 特定の会議のタスク一覧取得
+def get_tasks_by_meeting(db: Session, meeting_id: int):
+    return db.query(models.Task).filter(models.Task.meeting_id == meeting_id).all()
+
+# タスクの更新
+def update_task(db: Session, task_id: int, task: schemas.TaskCreate):
+    db_task = db.query(models.Task).filter(models.Task.id == task_id).first()
+    if db_task:
+        for key, value in task.dict().items():
+            setattr(db_task, key, value)
+        db.commit()
+        db.refresh(db_task)
+    return db_task
+
+# タスクの削除
+def delete_task(db: Session, task_id: int):
+    db_task = db.query(models.Task).filter(models.Task.id == task_id).first()
+    if db_task:
+        db.delete(db_task)
+        db.commit()
+    return db_task

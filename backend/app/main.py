@@ -42,3 +42,37 @@ def delete_meeting(meeting_id: int, db: Session = Depends(get_db)):
     if deleted_meeting is None:
         raise HTTPException(status_code=404, detail="会議が見つかりません")
     return deleted_meeting
+
+
+
+# タスク作成
+@app.post("/meetings/{meeting_id}/tasks/", response_model=schemas.Task)
+def create_meeting_task(meeting_id: int, task: schemas.TaskCreate, db: Session = Depends(get_db)):
+    # 会議の存在確認
+    meeting = crud.get_meeting_by_id(db, meeting_id)
+    if meeting is None:
+        raise HTTPException(status_code=404, detail="会議が見つかりません")
+    task.meeting_id = meeting_id  # meeting_idを設定
+    return crud.create_task(db=db, task=task)
+
+# 会議のタスク一覧取得
+@app.get("/meetings/{meeting_id}/tasks/", response_model=list[schemas.Task])
+def read_meeting_tasks(meeting_id: int, db: Session = Depends(get_db)):
+    tasks = crud.get_tasks_by_meeting(db, meeting_id)
+    return tasks
+
+# タスク更新
+@app.put("/tasks/{task_id}", response_model=schemas.Task)
+def update_task(task_id: int, task: schemas.TaskCreate, db: Session = Depends(get_db)):
+    updated_task = crud.update_task(db, task_id=task_id, task=task)
+    if updated_task is None:
+        raise HTTPException(status_code=404, detail="タスクが見つかりません")
+    return updated_task
+
+# タスク削除
+@app.delete("/tasks/{task_id}", response_model=schemas.Task)
+def delete_task(task_id: int, db: Session = Depends(get_db)):
+    deleted_task = crud.delete_task(db, task_id=task_id)
+    if deleted_task is None:
+        raise HTTPException(status_code=404, detail="タスクが見つかりません")
+    return deleted_task
