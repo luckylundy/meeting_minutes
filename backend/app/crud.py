@@ -39,7 +39,11 @@ def get_meetings(db: Session, skip: int = 0, limit: int = 100):
 
 # 特定のIDの会議を取得する関数
 def get_meeting_by_id(db: Session, meeting_id: int):
-    return db.query(models.Meeting).filter(models.Meeting.id == meeting_id).first()
+    meeting = db.query(models.Meeting).filter(models.Meeting.id == meeting_id).first()
+    if meeting:
+        # JSON文字列からリストに変換
+        meeting.participants = loads(meeting.participants)
+    return meeting
 
 # 会議を更新する関数
 def update_meeting(db: Session, meeting_id: int, meeting: schemas.MeetingCreate):
@@ -49,12 +53,24 @@ def update_meeting(db: Session, meeting_id: int, meeting: schemas.MeetingCreate)
     if db_meeting is None:
         return None
     
+    # 更新用のデータを準備
+    update_data = meeting.model_dump(exclude_unset=True)
+    
+    # participants（参加者リスト）がある場合は、JSON文字列に変換
+    if "participants" in update_data:
+        update_data["participants"] = dumps(update_data["participants"])
+    
     # 新しい情報で上書き
-    for key, value in meeting.model_dump(exclude_unset=True).items():
+    for key, value in update_data.items():
         setattr(db_meeting, key, value)
     
+    # データベースに保存
     db.commit()
     db.refresh(db_meeting)
+    
+    # 返す前にparticipantsをJSON文字列からリストに戻す
+    if db_meeting.participants:
+        db_meeting.participants = loads(db_meeting.participants)
     
     return db_meeting
 
@@ -65,6 +81,10 @@ def delete_meeting(db: Session, meeting_id: int):
     
     if db_meeting is None:
         return None
+    
+    # 会議を削除する前に、participantsをJSON文字列からリストに変換
+    if db_meeting.participants:
+        db_meeting.participants = loads(db_meeting.participants)
     
     # 会議を削除
     db.delete(db_meeting)
