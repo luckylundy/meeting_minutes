@@ -2,16 +2,32 @@ from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from . import crud, models, schemas
 from .database import engine, get_db
+from fastapi import FastAPI
+from .error_handlers import app_exception_handler
+from .exceptions import BaseAppException, ResourceNotFound
 
 # データベースのテーブルを作成
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+# グローバルな例外ハンドラーの登録
+app.add_exception_handler(BaseAppException, app_exception_handler)
+
 # 新しい会議を作るエンドポイント
 @app.post("/meetings/", response_model=schemas.Meeting)
 def create_meeting(meeting: schemas.MeetingCreate, db: Session = Depends(get_db)):
-    return crud.create_meeting(db=db, meeting=meeting)
+    try:
+        return crud.create_meeting(db=db, meeting=meeting)
+    except BaseAppException as e:
+        # 自作の例外は、そのままエラーハンドラーに渡す
+        raise e
+    except Exception as e:
+        # 予期せぬエラーは一般的なエラーメッセージに変換
+        raise BaseAppException(
+            message="会議の作成中にエラーが発生しました",
+            status_code=500
+        )
 
 # すべての会議を取得するエンドポイント
 @app.get("/meetings/", response_model=list[schemas.Meeting])
@@ -22,10 +38,10 @@ def read_meetings(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)
 # 特定のIDの会議を取得するエンドポイント
 @app.get("/meetings/{meeting_id}", response_model=schemas.Meeting)
 def read_meeting(meeting_id: int, db: Session = Depends(get_db)):
-    db_meeting = crud.get_meeting_by_id(db, meeting_id=meeting_id)
-    if db_meeting is None:
-        raise HTTPException(status_code=404, detail="会議が見つかりません")
-    return db_meeting
+    meeting = crud.get_meeting_by_id(db, meeting_id=meeting_id)
+    if meeting is None:
+        raise ResourceNotFound("会議")
+    return meeting
 
 # 会議を更新するエンドポイント
 @app.put("/meetings/{meeting_id}", response_model=schemas.Meeting)
