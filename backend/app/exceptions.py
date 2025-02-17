@@ -1,6 +1,6 @@
 class BaseAppException(Exception):
     """アプリケーションの基本例外クラス"""
-    def __init__(self, message: str, status_code: int = 400):
+    def __init__(self, message: str, status_code: int = 422):
         self.message = message
         self.status_code = status_code
         super().__init__(self.message)
@@ -9,12 +9,12 @@ class BaseAppException(Exception):
 class ValidationError(BaseAppException):
     """入力値の検証に失敗した場合の例外"""
     def __init__(self, message: str):
-        super().__init__(message=message, status_code=400)
+        super().__init__(message=message, status_code=422)
 
 class DateValidationError(ValidationError):
     """日付の検証に失敗した場合の例外"""
     def __init__(self):
-        super().__init__(message="無効な日付形式です。正しい日付を入力してください。")
+        super().__init__(message="過去の日付は指定できません。未来の日付を入力してください。")
 
 class ContentLengthError(ValidationError):
     """内容の長さが制限を超えた場合の例外"""

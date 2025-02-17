@@ -2,10 +2,9 @@ from fastapi import Request, status
 from fastapi.responses import JSONResponse
 from sqlalchemy.exc import SQLAlchemyError
 from pydantic import ValidationError as PydanticValidationError
-from .exceptions import BaseAppException  # 基底クラスのみをインポート
+from .exceptions import BaseAppException
 import logging
 
-# ロガーの設定
 logger = logging.getLogger(__name__)
 
 async def app_exception_handler(request: Request, exc: BaseAppException):
@@ -13,24 +12,27 @@ async def app_exception_handler(request: Request, exc: BaseAppException):
     return JSONResponse(
         status_code=exc.status_code,
         content={
-            "message": exc.message,
-            "status_code": exc.status_code,
-            "path": request.url.path,
-            "type": exc.__class__.__name__  # エラーの種類も含める
+            "detail": exc.message
         }
     )
 
 async def validation_exception_handler(request: Request, exc: PydanticValidationError):
     """Pydanticのバリデーションエラーをハンドリング"""
+    errors = exc.errors()
+    logger.error(f"Validation Errors: {errors}")
+    
+    # エラーメッセージを取得
+    if len(errors) > 0:
+        error = errors[0]
+        if isinstance(error.get("msg"), str):
+            return JSONResponse(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                content={"detail": error.get("msg")}
+            )
+    
     return JSONResponse(
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-        content={
-            "message": "入力データが不正です",
-            "details": exc.errors(),
-            "status_code": status.HTTP_422_UNPROCESSABLE_ENTITY,
-            "path": request.url.path,
-            "type": "ValidationError"
-        }
+        content={"detail": "入力データが不正です"}
     )
 
 async def sqlalchemy_exception_handler(request: Request, exc: SQLAlchemyError):
@@ -39,10 +41,7 @@ async def sqlalchemy_exception_handler(request: Request, exc: SQLAlchemyError):
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={
-            "message": "データベース処理中にエラーが発生しました",
-            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
-            "path": request.url.path,
-            "type": "DatabaseError"
+            "detail": "データベース処理中にエラーが発生しました"
         }
     )
 
@@ -52,9 +51,6 @@ async def general_exception_handler(request: Request, exc: Exception):
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={
-            "message": "予期せぬエラーが発生しました",
-            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
-            "path": request.url.path,
-            "type": "UnexpectedError"
+            "detail": "予期せぬエラーが発生しました"
         }
     )
