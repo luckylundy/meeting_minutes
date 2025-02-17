@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  # バックエンドサービス（お弁当）
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URL=sqlite:///./meeting_minutes.db
