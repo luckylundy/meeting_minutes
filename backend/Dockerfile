@@ -1,5 +1,5 @@
 # ベースイメージ（お弁当箱）を選ぶ
-FROM python:3.8-slim
+FROM python:3.9-slim
 
 # 作業ディレクトリ（お弁当を詰める場所）を作る
 WORKDIR /app
