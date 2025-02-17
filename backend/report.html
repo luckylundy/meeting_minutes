@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title id="head-title">report.html</title>
+      <link href="assets/style.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <h1 id="title">report.html</h1>
+    <p>Report generated on 15-Feb-2025 at 00:59:20 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a>
+        v4.1.1</p>
+    <div id="environment-header">
+      <h2>Environment</h2>
+    </div>
+    <table id="environment"></table>
+    <!-- TEMPLATES -->
+      <template id="template_environment_row">
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
+    <template id="template_results-table__body--empty">
+      <tbody class="results-table-row">
+        <tr id="not-found-message">
+          <td colspan="4">No results found. Check the filters.</th>
+        </tr>
+    </template>
+    <template id="template_results-table__tbody">
+      <tbody class="results-table-row">
+        <tr class="collapsible">
+        </tr>
+        <tr class="extras-row">
+          <td class="extra" colspan="4">
+            <div class="extraHTML"></div>
+            <div class="media">
+              <div class="media-container">
+                  <div class="media-container__nav--left"><</div>
+                  <div class="media-container__viewport">
+                    <img src="" />
+                    <video controls>
+                      <source src="" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="media-container__nav--right">></div>
+                </div>
+                <div class="media__name"></div>
+                <div class="media__counter"></div>
+            </div>
+            <div class="logwrapper">
+              <div class="logexpander"></div>
+              <div class="log"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+    <!-- END TEMPLATES -->
+    <div class="summary">
+      <div class="summary__data">
+        <h2>Summary</h2>
+        <div class="additional-summary prefix">
+        </div>
+        <p class="run-count">20 tests took 831 ms.</p>
+        <p class="filter">(Un)check the boxes to filter the results.</p>
+        <div class="summary__reload">
+          <div class="summary__reload__button hidden" onclick="location.reload()">
+            <div>There are still tests running. <br />Reload this page to get the latest results!</div>
+          </div>
+        </div>
+        <div class="summary__spacer"></div>
+        <div class="controls">
+          <div class="filters">
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="failed" />
+            <span class="failed">15 Failed,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="passed" />
+            <span class="passed">5 Passed,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="skipped" disabled/>
+            <span class="skipped">0 Skipped,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="xfailed" disabled/>
+            <span class="xfailed">0 Expected failures,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="xpassed" disabled/>
+            <span class="xpassed">0 Unexpected passes,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="error" disabled/>
+            <span class="error">0 Errors,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="rerun" disabled/>
+            <span class="rerun">0 Reruns</span>
+          </div>
+          <div class="collapse">
+            <button id="show_all_details">Show all details</button>&nbsp;/&nbsp;<button id="hide_all_details">Hide all details</button>
+          </div>
+        </div>
+      </div>
+      <div class="additional-summary summary">
+      </div>
+      <div class="additional-summary postfix">
+      </div>
+    </div>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable" data-column-type="result">Result</th>
+          <th class="sortable" data-column-type="testId">Test</th>
+          <th class="sortable" data-column-type="duration">Duration</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+    </table>
+  </body>
+  <footer>
+    <div id="data-container" data-jsonblob="{&#34;environment&#34;: {&#34;Python&#34;: &#34;3.9.6&#34;, &#34;Platform&#34;: &#34;macOS-12.7.6-x86_64-i386-64bit&#34;, &#34;Packages&#34;: {&#34;pytest&#34;: &#34;8.3.4&#34;, &#34;pluggy&#34;: &#34;1.5.0&#34;}, &#34;Plugins&#34;: {&#34;cov&#34;: &#34;6.0.0&#34;, &#34;html&#34;: &#34;4.1.1&#34;, &#34;json-report&#34;: &#34;1.5.0&#34;, &#34;metadata&#34;: &#34;3.1.1&#34;, &#34;anyio&#34;: &#34;4.8.0&#34;}}, &#34;tests&#34;: {&#34;tests/test_crud.py::test_create_meeting_crud&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_crud.py::test_create_meeting_crud&#34;, &#34;duration&#34;: &#34;29 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_crud.py::test_create_meeting_crud&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;29 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;db = &amp;lt;sqlalchemy.orm.session.Session object at 0x10ff1c8b0&amp;gt;\n\n    def test_create_meeting_crud(db):\n&amp;gt;       meeting_data = MeetingCreate(\n            title=&amp;quot;\u30c6\u30b9\u30c8\u4f1a\u8b70&amp;quot;,\n            date=&amp;quot;2025-02-14T10:00:00&amp;quot;,\n            start_time=&amp;quot;10:00&amp;quot;,\n            end_time=&amp;quot;11:00&amp;quot;,\n            participants=[&amp;quot;\u7530\u4e2d&amp;quot;, &amp;quot;\u9234\u6728&amp;quot;],\n            audio_file_path=None,\n            transcript=None,\n            summary=None\n        )\n\ntests/test_crud.py:7: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = &amp;lt;class &amp;#x27;app.schemas.MeetingCreate&amp;#x27;&amp;gt;, v = datetime.datetime(2025, 2, 14, 10, 0)\n\n    @field_validator(&amp;#x27;date&amp;#x27;)\n    @classmethod\n    def validate_meeting_date(cls, v):\n    # \u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u3092\u8003\u616e\u3057\u305f\u6bd4\u8f03\u306b\u4fee\u6b63\n        now = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)\n        check_date = v.replace(hour=0, minute=0, second=0, microsecond=0)\n        if check_date &amp;lt; now:\n&amp;gt;           raise DateValidationError()\nE           app.exceptions.DateValidationError: \u904e\u53bb\u306e\u65e5\u4ed8\u306f\u6307\u5b9a\u3067\u304d\u307e\u305b\u3093\u3002\u672a\u6765\u306e\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\n\napp/schemas.py:88: DateValidationError\n&#34;}], &#34;tests/test_crud.py::test_get_meetings_crud&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_crud.py::test_get_meetings_crud&#34;, &#34;duration&#34;: &#34;40 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_crud.py::test_get_meetings_crud&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;40 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;db = &amp;lt;sqlalchemy.orm.session.Session object at 0x10ffa0c40&amp;gt;\n\n    def test_get_meetings_crud(db):\n        # \u30c6\u30b9\u30c8\u30c7\u30fc\u30bf\u3092\u4f5c\u6210\n&amp;gt;       meeting_data = MeetingCreate(\n            title=&amp;quot;\u30c6\u30b9\u30c8\u4f1a\u8b701&amp;quot;,\n            date=&amp;quot;2025-02-14T10:00:00&amp;quot;,\n            start_time=&amp;quot;10:00&amp;quot;,\n            end_time=&amp;quot;11:00&amp;quot;,\n            participants=[&amp;quot;\u7530\u4e2d&amp;quot;],\n            audio_file_path=None,\n            transcript=None,\n            summary=None\n        )\n\ntests/test_crud.py:24: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = &amp;lt;class &amp;#x27;app.schemas.MeetingCreate&amp;#x27;&amp;gt;, v = datetime.datetime(2025, 2, 14, 10, 0)\n\n    @field_validator(&amp;#x27;date&amp;#x27;)\n    @classmethod\n    def validate_meeting_date(cls, v):\n    # \u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u3092\u8003\u616e\u3057\u305f\u6bd4\u8f03\u306b\u4fee\u6b63\n        now = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)\n        check_date = v.replace(hour=0, minute=0, second=0, microsecond=0)\n        if check_date &amp;lt; now:\n&amp;gt;           raise DateValidationError()\nE           app.exceptions.DateValidationError: \u904e\u53bb\u306e\u65e5\u4ed8\u306f\u6307\u5b9a\u3067\u304d\u307e\u305b\u3093\u3002\u672a\u6765\u306e\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\n\napp/schemas.py:88: DateValidationError\n&#34;}], &#34;tests/test_crud.py::test_create_task_crud&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_crud.py::test_create_task_crud&#34;, &#34;duration&#34;: &#34;34 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_crud.py::test_create_task_crud&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;34 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;db = &amp;lt;sqlalchemy.orm.session.Session object at 0x10ffd7f40&amp;gt;\n\n    def test_create_task_crud(db):\n        # \u307e\u305a\u4f1a\u8b70\u3092\u4f5c\u6210\n&amp;gt;       meeting_data = MeetingCreate(\n            title=&amp;quot;\u30c6\u30b9\u30c8\u4f1a\u8b70&amp;quot;,\n            date=&amp;quot;2025-02-14T10:00:00&amp;quot;,\n            start_time=&amp;quot;10:00&amp;quot;,\n            end_time=&amp;quot;11:00&amp;quot;,\n            participants=[&amp;quot;\u7530\u4e2d&amp;quot;],\n            audio_file_path=None,\n            transcript=None,\n            summary=None\n        )\n\ntests/test_crud.py:42: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = &amp;lt;class &amp;#x27;app.schemas.MeetingCreate&amp;#x27;&amp;gt;, v = datetime.datetime(2025, 2, 14, 10, 0)\n\n    @field_validator(&amp;#x27;date&amp;#x27;)\n    @classmethod\n    def validate_meeting_date(cls, v):\n    # \u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u3092\u8003\u616e\u3057\u305f\u6bd4\u8f03\u306b\u4fee\u6b63\n        now = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)\n        check_date = v.replace(hour=0, minute=0, second=0, microsecond=0)\n        if check_date &amp;lt; now:\n&amp;gt;           raise DateValidationError()\nE           app.exceptions.DateValidationError: \u904e\u53bb\u306e\u65e5\u4ed8\u306f\u6307\u5b9a\u3067\u304d\u307e\u305b\u3093\u3002\u672a\u6765\u306e\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\n\napp/schemas.py:88: DateValidationError\n&#34;}], &#34;tests/test_crud.py::test_get_tasks_by_meeting_crud&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_crud.py::test_get_tasks_by_meeting_crud&#34;, &#34;duration&#34;: &#34;26 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_crud.py::test_get_tasks_by_meeting_crud&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;26 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;db = &amp;lt;sqlalchemy.orm.session.Session object at 0x10ffc1af0&amp;gt;\n\n    def test_get_tasks_by_meeting_crud(db):\n        # \u4f1a\u8b70\u3068\u30bf\u30b9\u30af\u3092\u4f5c\u6210\n&amp;gt;       meeting_data = MeetingCreate(\n            title=&amp;quot;\u30c6\u30b9\u30c8\u4f1a\u8b70&amp;quot;,\n            date=&amp;quot;2025-02-14T10:00:00&amp;quot;,\n            start_time=&amp;quot;10:00&amp;quot;,\n            end_time=&amp;quot;11:00&amp;quot;,\n            participants=[&amp;quot;\u7530\u4e2d&amp;quot;],\n            audio_file_path=None,\n            transcript=None,\n            summary=None\n        )\n\ntests/test_crud.py:69: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = &amp;lt;class &amp;#x27;app.schemas.MeetingCreate&amp;#x27;&amp;gt;, v = datetime.datetime(2025, 2, 14, 10, 0)\n\n    @field_validator(&amp;#x27;date&amp;#x27;)\n    @classmethod\n    def validate_meeting_date(cls, v):\n    # \u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u3092\u8003\u616e\u3057\u305f\u6bd4\u8f03\u306b\u4fee\u6b63\n        now = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)\n        check_date = v.replace(hour=0, minute=0, second=0, microsecond=0)\n        if check_date &amp;lt; now:\n&amp;gt;           raise DateValidationError()\nE           app.exceptions.DateValidationError: \u904e\u53bb\u306e\u65e5\u4ed8\u306f\u6307\u5b9a\u3067\u304d\u307e\u305b\u3093\u3002\u672a\u6765\u306e\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\n\napp/schemas.py:88: DateValidationError\n&#34;}], &#34;tests/test_crud.py::test_update_task_crud&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_crud.py::test_update_task_crud&#34;, &#34;duration&#34;: &#34;33 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_crud.py::test_update_task_crud&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;33 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;db = &amp;lt;sqlalchemy.orm.session.Session object at 0x10ffd7970&amp;gt;\n\n    def test_update_task_crud(db):\n        # \u4f1a\u8b70\u3068\u30bf\u30b9\u30af\u3092\u4f5c\u6210\n&amp;gt;       meeting_data = MeetingCreate(\n            title=&amp;quot;\u30c6\u30b9\u30c8\u4f1a\u8b70&amp;quot;,\n            date=&amp;quot;2025-02-14T10:00:00&amp;quot;,\n            start_time=&amp;quot;10:00&amp;quot;,\n            end_time=&amp;quot;11:00&amp;quot;,\n            participants=[&amp;quot;\u7530\u4e2d&amp;quot;],\n            audio_file_path=None,\n            transcript=None,\n            summary=None\n        )\n\ntests/test_crud.py:96: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = &amp;lt;class &amp;#x27;app.schemas.MeetingCreate&amp;#x27;&amp;gt;, v = datetime.datetime(2025, 2, 14, 10, 0)\n\n    @field_validator(&amp;#x27;date&amp;#x27;)\n    @classmethod\n    def validate_meeting_date(cls, v):\n    # \u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u3092\u8003\u616e\u3057\u305f\u6bd4\u8f03\u306b\u4fee\u6b63\n        now = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)\n        check_date = v.replace(hour=0, minute=0, second=0, microsecond=0)\n        if check_date &amp;lt; now:\n&amp;gt;           raise DateValidationError()\nE           app.exceptions.DateValidationError: \u904e\u53bb\u306e\u65e5\u4ed8\u306f\u6307\u5b9a\u3067\u304d\u307e\u305b\u3093\u3002\u672a\u6765\u306e\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\n\napp/schemas.py:88: DateValidationError\n&#34;}], &#34;tests/test_error_cases.py::test_meeting_not_found&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/test_error_cases.py::test_meeting_not_found&#34;, &#34;duration&#34;: &#34;73 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_error_cases.py::test_meeting_not_found&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;73 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;tests/test_error_cases.py::test_invalid_meeting_data&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/test_error_cases.py::test_invalid_meeting_data&#34;, &#34;duration&#34;: &#34;45 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_error_cases.py::test_invalid_meeting_data&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;45 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;tests/test_error_cases.py::test_delete_nonexistent_meeting&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/test_error_cases.py::test_delete_nonexistent_meeting&#34;, &#34;duration&#34;: &#34;42 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_error_cases.py::test_delete_nonexistent_meeting&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;42 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;tests/test_error_cases.py::test_invalid_task_status&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_error_cases.py::test_invalid_task_status&#34;, &#34;duration&#34;: &#34;33 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_error_cases.py::test_invalid_task_status&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;33 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;client = &amp;lt;starlette.testclient.TestClient object at 0x10ffd7850&amp;gt;\n\n    def test_invalid_task_status(client):\n        # \u307e\u305a\u4f1a\u8b70\u3092\u4f5c\u6210\n        meeting_data = {\n            &amp;quot;title&amp;quot;: &amp;quot;\u30c6\u30b9\u30c8\u4f1a\u8b70&amp;quot;,\n            &amp;quot;date&amp;quot;: &amp;quot;2025-02-14T10:00:00&amp;quot;,\n            &amp;quot;start_time&amp;quot;: &amp;quot;10:00&amp;quot;,\n            &amp;quot;end_time&amp;quot;: &amp;quot;11:00&amp;quot;,\n            &amp;quot;participants&amp;quot;: [&amp;quot;\u7530\u4e2d&amp;quot;],\n            &amp;quot;audio_file_path&amp;quot;: None,\n            &amp;quot;transcript&amp;quot;: None,\n            &amp;quot;summary&amp;quot;: None\n        }\n        create_response = client.post(&amp;quot;/api/meetings&amp;quot;, json=meeting_data)\n&amp;gt;       meeting_id = create_response.json()[&amp;quot;id&amp;quot;]\nE       KeyError: &amp;#x27;id&amp;#x27;\n\ntests/test_error_cases.py:39: KeyError\n&#34;}], &#34;tests/test_meetings.py::TestMeetings::test_create_meeting&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_meetings.py::TestMeetings::test_create_meeting&#34;, &#34;duration&#34;: &#34;34 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_meetings.py::TestMeetings::test_create_meeting&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;34 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;tests.test_meetings.TestMeetings object at 0x10ff13730&amp;gt;\nclient = &amp;lt;starlette.testclient.TestClient object at 0x1100ba100&amp;gt;\n\n    def test_create_meeting(self, client):\n        response = client.post(&amp;quot;/api/meetings&amp;quot;, json=valid_meeting_data)\n&amp;gt;       assert response.status_code == 200\nE       assert 422 == 200\nE        +  where 422 = &amp;lt;Response [422 Unprocessable Entity]&amp;gt;.status_code\n\ntests/test_meetings.py:27: AssertionError\n&#34;}], &#34;tests/test_meetings.py::TestMeetings::test_create_meeting_invalid_time&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/test_meetings.py::TestMeetings::test_create_meeting_invalid_time&#34;, &#34;duration&#34;: &#34;47 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_meetings.py::TestMeetings::test_create_meeting_invalid_time&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;47 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;tests/test_meetings.py::TestMeetings::test_create_meeting_end_before_start&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/test_meetings.py::TestMeetings::test_create_meeting_end_before_start&#34;, &#34;duration&#34;: &#34;41 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_meetings.py::TestMeetings::test_create_meeting_end_before_start&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;41 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;No log output captured.&#34;}], &#34;tests/test_meetings.py::TestMeetings::test_get_meetings&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_meetings.py::TestMeetings::test_get_meetings&#34;, &#34;duration&#34;: &#34;68 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_meetings.py::TestMeetings::test_get_meetings&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;68 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;tests.test_meetings.TestMeetings object at 0x10ff13ca0&amp;gt;\nclient = &amp;lt;starlette.testclient.TestClient object at 0x110115310&amp;gt;\n\n    def test_get_meetings(self, client):\n        # \u307e\u305a\u4f1a\u8b70\u3092\u4f5c\u6210\n        client.post(&amp;quot;/api/meetings&amp;quot;, json=valid_meeting_data)\n        # \u4f1a\u8b70\u4e00\u89a7\u3092\u53d6\u5f97\n        response = client.get(&amp;quot;/api/meetings/&amp;quot;)\n        assert response.status_code == 200\n        data = response.json()\n        assert isinstance(data, list)\n&amp;gt;       assert len(data) &amp;gt; 0\nE       assert 0 &amp;gt; 0\nE        +  where 0 = len([])\n\ntests/test_meetings.py:53: AssertionError\n&#34;}], &#34;tests/test_meetings.py::TestMeetings::test_get_meeting_by_id&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_meetings.py::TestMeetings::test_get_meeting_by_id&#34;, &#34;duration&#34;: &#34;57 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_meetings.py::TestMeetings::test_get_meeting_by_id&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;57 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;tests.test_meetings.TestMeetings object at 0x10ff13eb0&amp;gt;\nclient = &amp;lt;starlette.testclient.TestClient object at 0x1101056a0&amp;gt;\n\n    def test_get_meeting_by_id(self, client):\n        # \u307e\u305a\u4f1a\u8b70\u3092\u4f5c\u6210\n        create_response = client.post(&amp;quot;/api/meetings&amp;quot;, json=valid_meeting_data)\n&amp;gt;       meeting_id = create_response.json()[&amp;quot;id&amp;quot;]\nE       KeyError: &amp;#x27;id&amp;#x27;\n\ntests/test_meetings.py:58: KeyError\n&#34;}], &#34;tests/test_meetings.py::TestMeetings::test_update_meeting&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_meetings.py::TestMeetings::test_update_meeting&#34;, &#34;duration&#34;: &#34;69 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_meetings.py::TestMeetings::test_update_meeting&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;69 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;tests.test_meetings.TestMeetings object at 0x10ff13be0&amp;gt;\nclient = &amp;lt;starlette.testclient.TestClient object at 0x1101461f0&amp;gt;\n\n    def test_update_meeting(self, client):\n        # \u307e\u305a\u4f1a\u8b70\u3092\u4f5c\u6210\n        create_response = client.post(&amp;quot;/api/meetings&amp;quot;, json=valid_meeting_data)\n&amp;gt;       meeting_id = create_response.json()[&amp;quot;id&amp;quot;]\nE       KeyError: &amp;#x27;id&amp;#x27;\n\ntests/test_meetings.py:68: KeyError\n&#34;}], &#34;tests/test_meetings.py::TestMeetings::test_delete_meeting&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_meetings.py::TestMeetings::test_delete_meeting&#34;, &#34;duration&#34;: &#34;50 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_meetings.py::TestMeetings::test_delete_meeting&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;50 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;tests.test_meetings.TestMeetings object at 0x10ff06820&amp;gt;\nclient = &amp;lt;starlette.testclient.TestClient object at 0x110105370&amp;gt;\n\n    def test_delete_meeting(self, client):\n        # \u307e\u305a\u4f1a\u8b70\u3092\u4f5c\u6210\n        create_response = client.post(&amp;quot;/api/meetings&amp;quot;, json=valid_meeting_data)\n&amp;gt;       meeting_id = create_response.json()[&amp;quot;id&amp;quot;]\nE       KeyError: &amp;#x27;id&amp;#x27;\n\ntests/test_meetings.py:80: KeyError\n&#34;}], &#34;tests/test_meetings.py::TestTasks::test_create_task&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_meetings.py::TestTasks::test_create_task&#34;, &#34;duration&#34;: &#34;44 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_meetings.py::TestTasks::test_create_task&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;44 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;tests.test_meetings.TestTasks object at 0x10ff1c100&amp;gt;\nclient = &amp;lt;starlette.testclient.TestClient object at 0x110115fa0&amp;gt;\n\n    def test_create_task(self, client):\n        # \u307e\u305a\u4f1a\u8b70\u3092\u4f5c\u6210\n        create_meeting_response = client.post(&amp;quot;/api/meetings&amp;quot;, json=valid_meeting_data)\n&amp;gt;       meeting_id = create_meeting_response.json()[&amp;quot;id&amp;quot;]\nE       KeyError: &amp;#x27;id&amp;#x27;\n\ntests/test_meetings.py:92: KeyError\n&#34;}], &#34;tests/test_meetings.py::TestTasks::test_get_meeting_tasks&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_meetings.py::TestTasks::test_get_meeting_tasks&#34;, &#34;duration&#34;: &#34;50 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_meetings.py::TestTasks::test_get_meeting_tasks&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;50 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;self = &amp;lt;tests.test_meetings.TestTasks object at 0x10ff1c310&amp;gt;\nclient = &amp;lt;starlette.testclient.TestClient object at 0x110106160&amp;gt;\n\n    def test_get_meeting_tasks(self, client):\n        # \u307e\u305a\u4f1a\u8b70\u3068\u30bf\u30b9\u30af\u3092\u4f5c\u6210\n        create_meeting_response = client.post(&amp;quot;/api/meetings&amp;quot;, json=valid_meeting_data)\n&amp;gt;       meeting_id = create_meeting_response.json()[&amp;quot;id&amp;quot;]\nE       KeyError: &amp;#x27;id&amp;#x27;\n\ntests/test_meetings.py:109: KeyError\n&#34;}], &#34;tests/test_schemas.py::test_meeting_create_validation&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_schemas.py::test_meeting_create_validation&#34;, &#34;duration&#34;: &#34;4 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_schemas.py::test_meeting_create_validation&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;4 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;def test_meeting_create_validation():\n        # \u6b63\u5e38\u306a\u30b1\u30fc\u30b9\n        meeting_data = {\n            &amp;quot;title&amp;quot;: &amp;quot;\u30c6\u30b9\u30c8\u4f1a\u8b70&amp;quot;,\n            &amp;quot;date&amp;quot;: &amp;quot;2025-02-14T10:00:00&amp;quot;,\n            &amp;quot;start_time&amp;quot;: &amp;quot;10:00&amp;quot;,\n            &amp;quot;end_time&amp;quot;: &amp;quot;11:00&amp;quot;,\n            &amp;quot;participants&amp;quot;: [&amp;quot;\u7530\u4e2d&amp;quot;, &amp;quot;\u9234\u6728&amp;quot;],\n            &amp;quot;audio_file_path&amp;quot;: None,\n            &amp;quot;transcript&amp;quot;: None,\n            &amp;quot;summary&amp;quot;: None\n        }\n&amp;gt;       meeting = MeetingCreate(**meeting_data)\n\ntests/test_schemas.py:18: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = &amp;lt;class &amp;#x27;app.schemas.MeetingCreate&amp;#x27;&amp;gt;, v = datetime.datetime(2025, 2, 14, 10, 0)\n\n    @field_validator(&amp;#x27;date&amp;#x27;)\n    @classmethod\n    def validate_meeting_date(cls, v):\n    # \u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u3092\u8003\u616e\u3057\u305f\u6bd4\u8f03\u306b\u4fee\u6b63\n        now = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)\n        check_date = v.replace(hour=0, minute=0, second=0, microsecond=0)\n        if check_date &amp;lt; now:\n&amp;gt;           raise DateValidationError()\nE           app.exceptions.DateValidationError: \u904e\u53bb\u306e\u65e5\u4ed8\u306f\u6307\u5b9a\u3067\u304d\u307e\u305b\u3093\u3002\u672a\u6765\u306e\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\n\napp/schemas.py:88: DateValidationError\n&#34;}], &#34;tests/test_schemas.py::test_task_create_validation&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Failed&#34;, &#34;testId&#34;: &#34;tests/test_schemas.py::test_task_create_validation&#34;, &#34;duration&#34;: &#34;11 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Failed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/test_schemas.py::test_task_create_validation&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;11 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;def test_task_create_validation():\n        # \u6b63\u5e38\u306a\u30b1\u30fc\u30b9\n        task_data = {\n            &amp;quot;content&amp;quot;: &amp;quot;\u30c6\u30b9\u30c8\u30bf\u30b9\u30af&amp;quot;,\n            &amp;quot;assignee&amp;quot;: &amp;quot;\u7530\u4e2d&amp;quot;,\n            &amp;quot;due_date&amp;quot;: &amp;quot;2025-02-15T10:00:00&amp;quot;,\n            &amp;quot;status&amp;quot;: &amp;quot;pending&amp;quot;\n        }\n        task = TaskCreate(**task_data)\n        assert task.content == task_data[&amp;quot;content&amp;quot;]\n    \n        # \u30a8\u30e9\u30fc\u30b1\u30fc\u30b9\uff08\u4e0d\u6b63\u306a\u30b9\u30c6\u30fc\u30bf\u30b9\uff09\n        with pytest.raises(ValidationError):\n&amp;gt;           TaskCreate(\n                content=&amp;quot;\u30c6\u30b9\u30c8\u30bf\u30b9\u30af&amp;quot;,\n                assignee=&amp;quot;\u7530\u4e2d&amp;quot;,\n                due_date=&amp;quot;2025-02-15T10:00:00&amp;quot;,\n                status=&amp;quot;invalid_status&amp;quot;  # \u8a31\u53ef\u3055\u308c\u3066\u3044\u306a\u3044\u30b9\u30c6\u30fc\u30bf\u30b9\n            )\n\ntests/test_schemas.py:44: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = &amp;lt;class &amp;#x27;app.schemas.TaskCreate&amp;#x27;&amp;gt;, v = &amp;#x27;invalid_status&amp;#x27;\n\n    @field_validator(&amp;#x27;status&amp;#x27;)\n    @classmethod\n    def validate_status(cls, v):\n        allowed_status = [&amp;#x27;pending&amp;#x27;, &amp;#x27;in_progress&amp;#x27;, &amp;#x27;completed&amp;#x27;]\n        if v not in allowed_status:\n&amp;gt;           raise ValidationError(f&amp;quot;\u30b9\u30c6\u30fc\u30bf\u30b9\u306f {&amp;#x27;, &amp;#x27;.join(allowed_status)} \u306e\u3044\u305a\u308c\u304b\u306b\u3057\u3066\u304f\u3060\u3055\u3044&amp;quot;)\nE           app.exceptions.ValidationError: \u30b9\u30c6\u30fc\u30bf\u30b9\u306f pending, in_progress, completed \u306e\u3044\u305a\u308c\u304b\u306b\u3057\u3066\u304f\u3060\u3055\u3044\n\napp/schemas.py:52: ValidationError\n&#34;}]}, &#34;renderCollapsed&#34;: [&#34;passed&#34;], &#34;initialSort&#34;: &#34;result&#34;, &#34;title&#34;: &#34;report.html&#34;}"></div>
+    <script>
+      (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+const { getCollapsedCategory, setCollapsedIds } = require('./storage.js')
+
+class DataManager {
+    setManager(data) {
+        const collapsedCategories = [...getCollapsedCategory(data.renderCollapsed)]
+        const collapsedIds = []
+        const tests = Object.values(data.tests).flat().map((test, index) => {
+            const collapsed = collapsedCategories.includes(test.result.toLowerCase())
+            const id = `test_${index}`
+            if (collapsed) {
+                collapsedIds.push(id)
+            }
+            return {
+                ...test,
+                id,
+                collapsed,
+            }
+        })
+        const dataBlob = { ...data, tests }
+        this.data = { ...dataBlob }
+        this.renderData = { ...dataBlob }
+        setCollapsedIds(collapsedIds)
+    }
+
+    get allData() {
+        return { ...this.data }
+    }
+
+    resetRender() {
+        this.renderData = { ...this.data }
+    }
+
+    setRender(data) {
+        this.renderData.tests = [...data]
+    }
+
+    toggleCollapsedItem(id) {
+        this.renderData.tests = this.renderData.tests.map((test) =>
+            test.id === id ? { ...test, collapsed: !test.collapsed } : test,
+        )
+    }
+
+    set allCollapsed(collapsed) {
+        this.renderData = { ...this.renderData, tests: [...this.renderData.tests.map((test) => (
+            { ...test, collapsed }
+        ))] }
+    }
+
+    get testSubset() {
+        return [...this.renderData.tests]
+    }
+
+    get environment() {
+        return this.renderData.environment
+    }
+
+    get initialSort() {
+        return this.data.initialSort
+    }
+}
+
+module.exports = {
+    manager: new DataManager(),
+}
+
+},{"./storage.js":8}],2:[function(require,module,exports){
+const mediaViewer = require('./mediaviewer.js')
+const templateEnvRow = document.getElementById('template_environment_row')
+const templateResult = document.getElementById('template_results-table__tbody')
+
+function htmlToElements(html) {
+    const temp = document.createElement('template')
+    temp.innerHTML = html
+    return temp.content.childNodes
+}
+
+const find = (selector, elem) => {
+    if (!elem) {
+        elem = document
+    }
+    return elem.querySelector(selector)
+}
+
+const findAll = (selector, elem) => {
+    if (!elem) {
+        elem = document
+    }
+    return [...elem.querySelectorAll(selector)]
+}
+
+const dom = {
+    getStaticRow: (key, value) => {
+        const envRow = templateEnvRow.content.cloneNode(true)
+        const isObj = typeof value === 'object' && value !== null
+        const values = isObj ? Object.keys(value).map((k) => `${k}: ${value[k]}`) : null
+
+        const valuesElement = htmlToElements(
+            values ? `<ul>${values.map((val) => `<li>${val}</li>`).join('')}<ul>` : `<div>${value}</div>`)[0]
+        const td = findAll('td', envRow)
+        td[0].textContent = key
+        td[1].appendChild(valuesElement)
+
+        return envRow
+    },
+    getResultTBody: ({ testId, id, log, extras, resultsTableRow, tableHtml, result, collapsed }) => {
+        const resultBody = templateResult.content.cloneNode(true)
+        resultBody.querySelector('tbody').classList.add(result.toLowerCase())
+        resultBody.querySelector('tbody').id = testId
+        resultBody.querySelector('.collapsible').dataset.id = id
+
+        resultsTableRow.forEach((html) => {
+            const t = document.createElement('template')
+            t.innerHTML = html
+            resultBody.querySelector('.collapsible').appendChild(t.content)
+        })
+
+        if (log) {
+            // Wrap lines starting with "E" with span.error to color those lines red
+            const wrappedLog = log.replace(/^E.*$/gm, (match) => `<span class="error">${match}</span>`)
+            resultBody.querySelector('.log').innerHTML = wrappedLog
+        } else {
+            resultBody.querySelector('.log').remove()
+        }
+
+        if (collapsed) {
+            resultBody.querySelector('.collapsible > td')?.classList.add('collapsed')
+            resultBody.querySelector('.extras-row').classList.add('hidden')
+        } else {
+            resultBody.querySelector('.collapsible > td')?.classList.remove('collapsed')
+        }
+
+        const media = []
+        extras?.forEach(({ name, format_type, content }) => {
+            if (['image', 'video'].includes(format_type)) {
+                media.push({ path: content, name, format_type })
+            }
+
+            if (format_type === 'html') {
+                resultBody.querySelector('.extraHTML').insertAdjacentHTML('beforeend', `<div>${content}</div>`)
+            }
+        })
+        mediaViewer.setup(resultBody, media)
+
+        // Add custom html from the pytest_html_results_table_html hook
+        tableHtml?.forEach((item) => {
+            resultBody.querySelector('td[class="extra"]').insertAdjacentHTML('beforeend', item)
+        })
+
+        return resultBody
+    },
+}
+
+module.exports = {
+    dom,
+    htmlToElements,
+    find,
+    findAll,
+}
+
+},{"./mediaviewer.js":6}],3:[function(require,module,exports){
+const { manager } = require('./datamanager.js')
+const { doSort } = require('./sort.js')
+const storageModule = require('./storage.js')
+
+const getFilteredSubSet = (filter) =>
+    manager.allData.tests.filter(({ result }) => filter.includes(result.toLowerCase()))
+
+const doInitFilter = () => {
+    const currentFilter = storageModule.getVisible()
+    const filteredSubset = getFilteredSubSet(currentFilter)
+    manager.setRender(filteredSubset)
+}
+
+const doFilter = (type, show) => {
+    if (show) {
+        storageModule.showCategory(type)
+    } else {
+        storageModule.hideCategory(type)
+    }
+
+    const currentFilter = storageModule.getVisible()
+    const filteredSubset = getFilteredSubSet(currentFilter)
+    manager.setRender(filteredSubset)
+
+    const sortColumn = storageModule.getSort()
+    doSort(sortColumn, true)
+}
+
+module.exports = {
+    doFilter,
+    doInitFilter,
+}
+
+},{"./datamanager.js":1,"./sort.js":7,"./storage.js":8}],4:[function(require,module,exports){
+const { redraw, bindEvents, renderStatic } = require('./main.js')
+const { doInitFilter } = require('./filter.js')
+const { doInitSort } = require('./sort.js')
+const { manager } = require('./datamanager.js')
+const data = JSON.parse(document.getElementById('data-container').dataset.jsonblob)
+
+function init() {
+    manager.setManager(data)
+    doInitFilter()
+    doInitSort()
+    renderStatic()
+    redraw()
+    bindEvents()
+}
+
+init()
+
+},{"./datamanager.js":1,"./filter.js":3,"./main.js":5,"./sort.js":7}],5:[function(require,module,exports){
+const { dom, find, findAll } = require('./dom.js')
+const { manager } = require('./datamanager.js')
+const { doSort } = require('./sort.js')
+const { doFilter } = require('./filter.js')
+const {
+    getVisible,
+    getCollapsedIds,
+    setCollapsedIds,
+    getSort,
+    getSortDirection,
+    possibleFilters,
+} = require('./storage.js')
+
+const removeChildren = (node) => {
+    while (node.firstChild) {
+        node.removeChild(node.firstChild)
+    }
+}
+
+const renderStatic = () => {
+    const renderEnvironmentTable = () => {
+        const environment = manager.environment
+        const rows = Object.keys(environment).map((key) => dom.getStaticRow(key, environment[key]))
+        const table = document.getElementById('environment')
+        removeChildren(table)
+        rows.forEach((row) => table.appendChild(row))
+    }
+    renderEnvironmentTable()
+}
+
+const addItemToggleListener = (elem) => {
+    elem.addEventListener('click', ({ target }) => {
+        const id = target.parentElement.dataset.id
+        manager.toggleCollapsedItem(id)
+
+        const collapsedIds = getCollapsedIds()
+        if (collapsedIds.includes(id)) {
+            const updated = collapsedIds.filter((item) => item !== id)
+            setCollapsedIds(updated)
+        } else {
+            collapsedIds.push(id)
+            setCollapsedIds(collapsedIds)
+        }
+        redraw()
+    })
+}
+
+const renderContent = (tests) => {
+    const sortAttr = getSort(manager.initialSort)
+    const sortAsc = JSON.parse(getSortDirection())
+    const rows = tests.map(dom.getResultTBody)
+    const table = document.getElementById('results-table')
+    const tableHeader = document.getElementById('results-table-head')
+
+    const newTable = document.createElement('table')
+    newTable.id = 'results-table'
+
+    // remove all sorting classes and set the relevant
+    findAll('.sortable', tableHeader).forEach((elem) => elem.classList.remove('asc', 'desc'))
+    tableHeader.querySelector(`.sortable[data-column-type="${sortAttr}"]`)?.classList.add(sortAsc ? 'desc' : 'asc')
+    newTable.appendChild(tableHeader)
+
+    if (!rows.length) {
+        const emptyTable = document.getElementById('template_results-table__body--empty').content.cloneNode(true)
+        newTable.appendChild(emptyTable)
+    } else {
+        rows.forEach((row) => {
+            if (!!row) {
+                findAll('.collapsible td:not(.col-links', row).forEach(addItemToggleListener)
+                find('.logexpander', row).addEventListener('click',
+                    (evt) => evt.target.parentNode.classList.toggle('expanded'),
+                )
+                newTable.appendChild(row)
+            }
+        })
+    }
+
+    table.replaceWith(newTable)
+}
+
+const renderDerived = () => {
+    const currentFilter = getVisible()
+    possibleFilters.forEach((result) => {
+        const input = document.querySelector(`input[data-test-result="${result}"]`)
+        input.checked = currentFilter.includes(result)
+    })
+}
+
+const bindEvents = () => {
+    const filterColumn = (evt) => {
+        const { target: element } = evt
+        const { testResult } = element.dataset
+
+        doFilter(testResult, element.checked)
+        const collapsedIds = getCollapsedIds()
+        const updated = manager.renderData.tests.map((test) => {
+            return {
+                ...test,
+                collapsed: collapsedIds.includes(test.id),
+            }
+        })
+        manager.setRender(updated)
+        redraw()
+    }
+
+    const header = document.getElementById('environment-header')
+    header.addEventListener('click', () => {
+        const table = document.getElementById('environment')
+        table.classList.toggle('hidden')
+        header.classList.toggle('collapsed')
+    })
+
+    findAll('input[name="filter_checkbox"]').forEach((elem) => {
+        elem.addEventListener('click', filterColumn)
+    })
+
+    findAll('.sortable').forEach((elem) => {
+        elem.addEventListener('click', (evt) => {
+            const { target: element } = evt
+            const { columnType } = element.dataset
+            doSort(columnType)
+            redraw()
+        })
+    })
+
+    document.getElementById('show_all_details').addEventListener('click', () => {
+        manager.allCollapsed = false
+        setCollapsedIds([])
+        redraw()
+    })
+    document.getElementById('hide_all_details').addEventListener('click', () => {
+        manager.allCollapsed = true
+        const allIds = manager.renderData.tests.map((test) => test.id)
+        setCollapsedIds(allIds)
+        redraw()
+    })
+}
+
+const redraw = () => {
+    const { testSubset } = manager
+
+    renderContent(testSubset)
+    renderDerived()
+}
+
+module.exports = {
+    redraw,
+    bindEvents,
+    renderStatic,
+}
+
+},{"./datamanager.js":1,"./dom.js":2,"./filter.js":3,"./sort.js":7,"./storage.js":8}],6:[function(require,module,exports){
+class MediaViewer {
+    constructor(assets) {
+        this.assets = assets
+        this.index = 0
+    }
+
+    nextActive() {
+        this.index = this.index === this.assets.length - 1 ? 0 : this.index + 1
+        return [this.activeFile, this.index]
+    }
+
+    prevActive() {
+        this.index = this.index === 0 ? this.assets.length - 1 : this.index -1
+        return [this.activeFile, this.index]
+    }
+
+    get currentIndex() {
+        return this.index
+    }
+
+    get activeFile() {
+        return this.assets[this.index]
+    }
+}
+
+
+const setup = (resultBody, assets) => {
+    if (!assets.length) {
+        resultBody.querySelector('.media').classList.add('hidden')
+        return
+    }
+
+    const mediaViewer = new MediaViewer(assets)
+    const container = resultBody.querySelector('.media-container')
+    const leftArrow = resultBody.querySelector('.media-container__nav--left')
+    const rightArrow = resultBody.querySelector('.media-container__nav--right')
+    const mediaName = resultBody.querySelector('.media__name')
+    const counter = resultBody.querySelector('.media__counter')
+    const imageEl = resultBody.querySelector('img')
+    const sourceEl = resultBody.querySelector('source')
+    const videoEl = resultBody.querySelector('video')
+
+    const setImg = (media, index) => {
+        if (media?.format_type === 'image') {
+            imageEl.src = media.path
+
+            imageEl.classList.remove('hidden')
+            videoEl.classList.add('hidden')
+        } else if (media?.format_type === 'video') {
+            sourceEl.src = media.path
+
+            videoEl.classList.remove('hidden')
+            imageEl.classList.add('hidden')
+        }
+
+        mediaName.innerText = media?.name
+        counter.innerText = `${index + 1} / ${assets.length}`
+    }
+    setImg(mediaViewer.activeFile, mediaViewer.currentIndex)
+
+    const moveLeft = () => {
+        const [media, index] = mediaViewer.prevActive()
+        setImg(media, index)
+    }
+    const doRight = () => {
+        const [media, index] = mediaViewer.nextActive()
+        setImg(media, index)
+    }
+    const openImg = () => {
+        window.open(mediaViewer.activeFile.path, '_blank')
+    }
+    if (assets.length === 1) {
+        container.classList.add('media-container--fullscreen')
+    } else {
+        leftArrow.addEventListener('click', moveLeft)
+        rightArrow.addEventListener('click', doRight)
+    }
+    imageEl.addEventListener('click', openImg)
+}
+
+module.exports = {
+    setup,
+}
+
+},{}],7:[function(require,module,exports){
+const { manager } = require('./datamanager.js')
+const storageModule = require('./storage.js')
+
+const genericSort = (list, key, ascending, customOrder) => {
+    let sorted
+    if (customOrder) {
+        sorted = list.sort((a, b) => {
+            const aValue = a.result.toLowerCase()
+            const bValue = b.result.toLowerCase()
+
+            const aIndex = customOrder.findIndex((item) => item.toLowerCase() === aValue)
+            const bIndex = customOrder.findIndex((item) => item.toLowerCase() === bValue)
+
+            // Compare the indices to determine the sort order
+            return aIndex - bIndex
+        })
+    } else {
+        sorted = list.sort((a, b) => a[key] === b[key] ? 0 : a[key] > b[key] ? 1 : -1)
+    }
+
+    if (ascending) {
+        sorted.reverse()
+    }
+    return sorted
+}
+
+const durationSort = (list, ascending) => {
+    const parseDuration = (duration) => {
+        if (duration.includes(':')) {
+            // If it's in the format "HH:mm:ss"
+            const [hours, minutes, seconds] = duration.split(':').map(Number)
+            return (hours * 3600 + minutes * 60 + seconds) * 1000
+        } else {
+            // If it's in the format "nnn ms"
+            return parseInt(duration)
+        }
+    }
+    const sorted = list.sort((a, b) => parseDuration(a['duration']) - parseDuration(b['duration']))
+    if (ascending) {
+        sorted.reverse()
+    }
+    return sorted
+}
+
+const doInitSort = () => {
+    const type = storageModule.getSort(manager.initialSort)
+    const ascending = storageModule.getSortDirection()
+    const list = manager.testSubset
+    const initialOrder = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed', 'Skipped', 'Passed']
+
+    storageModule.setSort(type)
+    storageModule.setSortDirection(ascending)
+
+    if (type?.toLowerCase() === 'original') {
+        manager.setRender(list)
+    } else {
+        let sortedList
+        switch (type) {
+        case 'duration':
+            sortedList = durationSort(list, ascending)
+            break
+        case 'result':
+            sortedList = genericSort(list, type, ascending, initialOrder)
+            break
+        default:
+            sortedList = genericSort(list, type, ascending)
+            break
+        }
+        manager.setRender(sortedList)
+    }
+}
+
+const doSort = (type, skipDirection) => {
+    const newSortType = storageModule.getSort(manager.initialSort) !== type
+    const currentAsc = storageModule.getSortDirection()
+    let ascending
+    if (skipDirection) {
+        ascending = currentAsc
+    } else {
+        ascending = newSortType ? false : !currentAsc
+    }
+    storageModule.setSort(type)
+    storageModule.setSortDirection(ascending)
+
+    const list = manager.testSubset
+    const sortedList = type === 'duration' ? durationSort(list, ascending) : genericSort(list, type, ascending)
+    manager.setRender(sortedList)
+}
+
+module.exports = {
+    doInitSort,
+    doSort,
+}
+
+},{"./datamanager.js":1,"./storage.js":8}],8:[function(require,module,exports){
+const possibleFilters = [
+    'passed',
+    'skipped',
+    'failed',
+    'error',
+    'xfailed',
+    'xpassed',
+    'rerun',
+]
+
+const getVisible = () => {
+    const url = new URL(window.location.href)
+    const settings = new URLSearchParams(url.search).get('visible')
+    const lower = (item) => {
+        const lowerItem = item.toLowerCase()
+        if (possibleFilters.includes(lowerItem)) {
+            return lowerItem
+        }
+        return null
+    }
+    return settings === null ?
+        possibleFilters :
+        [...new Set(settings?.split(',').map(lower).filter((item) => item))]
+}
+
+const hideCategory = (categoryToHide) => {
+    const url = new URL(window.location.href)
+    const visibleParams = new URLSearchParams(url.search).get('visible')
+    const currentVisible = visibleParams ? visibleParams.split(',') : [...possibleFilters]
+    const settings = [...new Set(currentVisible)].filter((f) => f !== categoryToHide).join(',')
+
+    url.searchParams.set('visible', settings)
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const showCategory = (categoryToShow) => {
+    if (typeof window === 'undefined') {
+        return
+    }
+    const url = new URL(window.location.href)
+    const currentVisible = new URLSearchParams(url.search).get('visible')?.split(',').filter(Boolean) ||
+        [...possibleFilters]
+    const settings = [...new Set([categoryToShow, ...currentVisible])]
+    const noFilter = possibleFilters.length === settings.length || !settings.length
+
+    noFilter ? url.searchParams.delete('visible') : url.searchParams.set('visible', settings.join(','))
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const getSort = (initialSort) => {
+    const url = new URL(window.location.href)
+    let sort = new URLSearchParams(url.search).get('sort')
+    if (!sort) {
+        sort = initialSort || 'result'
+    }
+    return sort
+}
+
+const setSort = (type) => {
+    const url = new URL(window.location.href)
+    url.searchParams.set('sort', type)
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const getCollapsedCategory = (renderCollapsed) => {
+    let categories
+    if (typeof window !== 'undefined') {
+        const url = new URL(window.location.href)
+        const collapsedItems = new URLSearchParams(url.search).get('collapsed')
+        switch (true) {
+        case !renderCollapsed && collapsedItems === null:
+            categories = ['passed']
+            break
+        case collapsedItems?.length === 0 || /^["']{2}$/.test(collapsedItems):
+            categories = []
+            break
+        case /^all$/.test(collapsedItems) || collapsedItems === null && /^all$/.test(renderCollapsed):
+            categories = [...possibleFilters]
+            break
+        default:
+            categories = collapsedItems?.split(',').map((item) => item.toLowerCase()) || renderCollapsed
+            break
+        }
+    } else {
+        categories = []
+    }
+    return categories
+}
+
+const getSortDirection = () => JSON.parse(sessionStorage.getItem('sortAsc')) || false
+const setSortDirection = (ascending) => sessionStorage.setItem('sortAsc', ascending)
+
+const getCollapsedIds = () => JSON.parse(sessionStorage.getItem('collapsedIds')) || []
+const setCollapsedIds = (list) => sessionStorage.setItem('collapsedIds', JSON.stringify(list))
+
+module.exports = {
+    getVisible,
+    hideCategory,
+    showCategory,
+    getCollapsedIds,
+    setCollapsedIds,
+    getSort,
+    setSort,
+    getSortDirection,
+    setSortDirection,
+    getCollapsedCategory,
+    possibleFilters,
+}
+
+},{}]},{},[4]);
+    </script>
+  </footer>
+</html>
