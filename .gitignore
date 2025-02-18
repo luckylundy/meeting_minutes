@@ -19,7 +19,9 @@ dist/
 
 # backup
 backend/backup_*
-backend/*_backup_*.db# Environment files
-.env
-.env.*
-!.env.example
+backend/*_backup_*.db
+
+# Environment files
+backend/.env
+backend/.env.*
+!backend/.env.example
