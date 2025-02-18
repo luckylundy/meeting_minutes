@@ -1,6 +1,8 @@
+# app/core/config.py
 from pydantic_settings import BaseSettings
 from functools import lru_cache
 from typing import Optional
+from pydantic import ConfigDict
 
 class Settings(BaseSettings):
     # 基本設定
@@ -15,8 +17,10 @@ class Settings(BaseSettings):
     # データベース設定
     DATABASE_URL: str = "sqlite:///./meeting_minutes.db"
     
-    class Config:
-        env_file = ".env"
+    # class Config: の代わりに
+    model_config = ConfigDict(
+        env_file=".env"
+    )
 
 @lru_cache()
 def get_settings():
