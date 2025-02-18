@@ -16,3 +16,7 @@ dist/
 .vscode/
 .idea/
 *.swp
+
+# backup
+backend/backup_*
+backend/*_backup_*.db
