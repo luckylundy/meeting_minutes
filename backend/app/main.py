@@ -15,6 +15,7 @@ from pydantic import BaseModel, Field
 from .schemas import MeetingCreate, Meeting
 from .crud import create_meeting
 import logging
+from fastapi.middleware.cors import CORSMiddleware
 
 # ログの設定
 logging.basicConfig(level=logging.INFO)
@@ -27,6 +28,15 @@ app = FastAPI(
     title="会議議事録自動生成アプリ",
     description="会議の記録と議事録を自動で生成するためのAPI",
     version="1.0.0"
+)
+
+# アプリケーションインスタンスの作成後に追加
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 本番環境では適切なオリジンに制限すべき
+    allow_credentials=True,
+    allow_methods=["*"],  # すべてのHTTPメソッドを許可
+    allow_headers=["*"],
 )
 
 # グローバルな例外ハンドラーの登録

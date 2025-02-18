@@ -1,15 +1,15 @@
+# app/database.py
 from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
+from .core.config import get_settings
 
-# SQLiteデータベースのURL
-SQLALCHEMY_DATABASE_URL = "sqlite:///./meeting_minutes.db"
+settings = get_settings()
 
 # データベースエンジンの作成
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, 
-    connect_args={"check_same_thread": False},
-    echo=True  # SQLトレースを有効化
+    settings.DATABASE_URL,
+    connect_args={"check_same_thread": False} if settings.DATABASE_URL.startswith("sqlite") else {},
+    echo=settings.DEBUG  # 開発環境でのみSQLログを表示
 )
 
 # セッションの作成

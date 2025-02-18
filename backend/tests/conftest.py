@@ -1,41 +1,38 @@
+# tests/conftest.py
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import sys
-import os
-
-# デバッグ情報
-print("Current working directory:", os.getcwd())
-print("Initial sys.path:", sys.path)
-
-# Pythonパスを明示的に設定
-app_root = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-if app_root not in sys.path:
-    sys.path.insert(0, app_root)
-
-print("Modified sys.path:", sys.path)
-print("App directory exists:", os.path.exists(os.path.join(app_root, 'app')))
-print("App directory contents:", os.listdir(os.path.join(app_root, 'app')))
-
+from app.database import Base, get_db
 from app.main import app
-from app.database import get_db, Base
+from app.core.config import get_settings, Settings
 
-# テスト用のSQLiteデータベースを使用
-SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
+def get_test_settings():
+    return Settings(
+        ENVIRONMENT="test",
+        DEBUG=True,
+        DATABASE_URL="sqlite:///./test.db"
+    )
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
-TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+# テスト用の設定をオーバーライド
+app.dependency_overrides[get_settings] = get_test_settings
+
+# テスト用のデータベースエンジンを作成
+test_engine = create_engine(
+    get_test_settings().DATABASE_URL,
+    connect_args={"check_same_thread": False}
+)
+TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=test_engine)
 
 @pytest.fixture(scope="function")
 def db():
-    Base.metadata.create_all(bind=engine)
+    Base.metadata.create_all(bind=test_engine)
     try:
         db = TestingSessionLocal()
         yield db
     finally:
         db.close()
-        Base.metadata.drop_all(bind=engine)
+        Base.metadata.drop_all(bind=test_engine)
 
 @pytest.fixture
 def client(db):
