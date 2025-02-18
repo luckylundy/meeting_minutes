@@ -1,21 +1,31 @@
-# ベースイメージ（お弁当箱）を選ぶ
+# ベースイメージ指定
 FROM python:3.9-slim
 
-# 作業ディレクトリ（お弁当を詰める場所）を作る
+# 作業ディレクトリ設定
 WORKDIR /app
 
-# 必要なファイル（おかずの材料）をコピーする
+# 必要なファイルのコピー
 COPY requirements.txt .
 COPY pyproject.toml .
 
-# Pythonパッケージ（おかず）をインストールします
-RUN pip install --no-cache-dir -r requirements.txt
+# システムの依存関係とPythonパッケージのインストール
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        gcc \
+        python3-dev \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apt-get purge -y --auto-remove gcc python3-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# アプリケーションコード（できあがったおかず）をコピーします
+# アプリケーションコードのコピー
 COPY . .
 
-# アプリケーションを起動（お弁当を開ける）する準備をします
+# Pythonパスの設定
+ENV PYTHONPATH=/app
+
+# ポートの公開
 EXPOSE 8000
 
-# アプリケーションを起動（いただきます！）します
+# アプリケーションの起動
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

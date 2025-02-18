@@ -1,7 +1,4 @@
-version: "3.8"
-
 services:
-  # バックエンドサービス（お弁当）
   backend:
     build: .
     ports:
@@ -10,3 +7,6 @@ services:
       - .:/app
     environment:
       - DATABASE_URL=sqlite:///./meeting_minutes.db
+      - PYTHONPATH=/app
+    working_dir: /app # 追加
+    command: tail -f /dev/null
